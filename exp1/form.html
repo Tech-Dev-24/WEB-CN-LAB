@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML form Tag</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #4CAF50;
+            font-size: 42px;
+            font-weight: 400;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: #4CAF50;
+            font-size: 32px;
+            font-weight: 400;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .note {
+            background-color: #ffffcc;
+            border-left: 6px solid #ffeb3b;
+            padding: 16px;
+            margin: 20px 0;
+        }
+        
+        .example {
+            background-color: #f5f5f5;
+            padding: 16px;
+            margin: 20px 0;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .code {
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+            font-size: 14px;
+            line-height: 1.4;
+            color: #000;
+            background-color: #fff;
+            padding: 12px;
+            border-left: 4px solid #4CAF50;
+            overflow: auto;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 10px 12px;
+        }
+        
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 20px 0;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 20px;
+        }
+        
+        .tryitbtn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        
+        .tryitbtn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="breadcrumb">
+    <a href="exp1.html">« HTML Tags Reference</a>
+</div>
+
+<h1>HTML &lt;form&gt; Tag</h1>
+
+<div class="example">
+    <h3>Example</h3>
+    <p>An HTML form with two input fields and one submit button:</p>
+    <div class="code">
+        &lt;form action="/action_page.php" method="get"&gt;<br>
+        &nbsp;&nbsp;&lt;label for="fname"&gt;First name:&lt;/label&gt;<br>
+        &nbsp;&nbsp;&lt;input type="text" id="fname" name="fname"&gt;&lt;br&gt;&lt;br&gt;<br>
+        &nbsp;&nbsp;&lt;label for="lname"&gt;Last name:&lt;/label&gt;<br>
+        &nbsp;&nbsp;&lt;input type="text" id="lname" name="lname"&gt;&lt;br&gt;&lt;br&gt;<br>
+        &nbsp;&nbsp;&lt;input type="submit" value="Submit"&gt;<br>
+        &lt;/form&gt;
+    </div>
+    <button class="tryitbtn">Try it Yourself »</button>
+</div>
+
+<hr>
+
+<h2>Definition and Usage</h2>
+<p>The &lt;form&gt; tag is used to create an HTML form for user input.</p>
+<p>The &lt;form&gt; element can contain one or more of the following form elements:</p>
+<ul>
+    <li>&lt;input&gt;</li>
+    <li>&lt;textarea&gt;</li>
+    <li>&lt;button&gt;</li>
+    <li>&lt;select&gt;</li>
+    <li>&lt;option&gt;</li>
+    <li>&lt;optgroup&gt;</li>
+    <li>&lt;fieldset&gt;</li>
+    <li>&lt;label&gt;</li>
+    <li>&lt;output&gt;</li>
+</ul>
+
+<hr>
+
+<h2>Attributes</h2>
+<table>
+    <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>accept-charset</td>
+        <td>character_set</td>
+        <td>Specifies the character encodings that are to be used for the form submission</td>
+    </tr>
+    <tr>
+        <td>action</td>
+        <td>URL</td>
+        <td>Specifies where to send the form-data when a form is submitted</td>
+    </tr>
+    <tr>
+        <td>autocomplete</td>
+        <td>on<br>off</td>
+        <td>Specifies whether a form should have autocomplete on or off</td>
+    </tr>
+    <tr>
+        <td>enctype</td>
+        <td>application/x-www-form-urlencoded<br>multipart/form-data<br>text/plain</td>
+        <td>Specifies how the form-data should be encoded when submitting it to the server (only for method="post")</td>
+    </tr>
+    <tr>
+        <td>method</td>
+        <td>get<br>post</td>
+        <td>Specifies the HTTP method to use when sending form-data</td>
+    </tr>
+    <tr>
+        <td>name</td>
+        <td>text</td>
+        <td>Specifies the name of a form</td>
+    </tr>
+    <tr>
+        <td>novalidate</td>
+        <td>novalidate</td>
+        <td>Specifies that the form should not be validated when submitted</td>
+    </tr>
+    <tr>
+        <td>rel</td>
+        <td>external<br>help<br>license<br>next<br>nofollow<br>noopener<br>noreferrer<br>opener<br>prev<br>search</td>
+        <td>Specifies the relationship between a linked resource and the current document</td>
+    </tr>
+    <tr>
+        <td>target</td>
+        <td>_blank<br>_self<br>_parent<br>_top</td>
+        <td>Specifies where to display the response that is received after submitting the form</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2>Browser Support</h2>
+<table>
+    <tr>
+        <th>Element</th>
+        <th>Chrome</th>
+        <th>Edge</th>
+        <th>Firefox</th>
+        <th>Safari</th>
+        <th>Opera</th>
+    </tr>
+    <tr>
+        <td>&lt;form&gt;</td>
+        <td>Yes</td>
+        <td>Yes</td>
+        <td>Yes</td>
+        <td>Yes</td>
+        <td>Yes</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2>Global Attributes</h2>
+<p>The &lt;form&gt; tag also supports the Global Attributes in HTML.</p>
+
+<hr>
+
+<h2>Event Attributes</h2>
+<p>The &lt;form&gt; tag also supports the Event Attributes in HTML.</p>
+
+<hr>
+
+<h2>Default CSS Settings</h2>
+<p>Most browsers will display the &lt;form&gt; element with the following default values:</p>
+
+<div class="code">
+    form {
+        display: block;
+        margin-top: 0em;
+    }
+</div>
+
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML body Tag</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #4CAF50;
+            font-size: 42px;
+            font-weight: 400;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: #4CAF50;
+            font-size: 32px;
+            font-weight: 400;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .w3-note {
+            background-color: #ffffcc;
+            border-left: 6px solid #ffeb3b;
+            padding: 16px;
+            margin: 20px 0;
+        }
+        
+        .w3-example {
+            background-color: #f5f5f5;
+            padding: 16px;
+            margin: 20px 0;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .w3-code {
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+            font-size: 14px;
+            line-height: 1.4;
+            color: #000;
+            background-color: #fff;
+            padding: 12px;
+            border-left: 4px solid #4CAF50;
+            overflow: auto;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f5f5f5;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 10px 12px;
+        }
+        
+        .output-example {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 16px;
+            margin: 20px 0;
+        }
+        
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 20px 0;
+        }
+        
+        .default-css {
+            background-color: #f5f5f5;
+            padding: 16px;
+            margin: 20px 0;
+            border-left: 4px solid #4CAF50;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+        }
+    </style>
+</head>
+<body>
+
+<div class="breadcrumb">
+    <a href="exp1.html">« HTML Tags Reference</a>
+</div>
+
+<h1>HTML &lt;body&gt; Tag</h1>
+
+<div class="w3-note">
+    <p>The <code>&lt;body&gt;</code> tag defines the document's body.</p>
+    <p>The <code>&lt;body&gt;</code> element contains all the contents of an HTML document, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.</p>
+</div>
+
+<hr>
+
+<h2>Example</h2>
+<p>A simple HTML document with the &lt;body&gt; element:</p>
+
+<div class="w3-example">
+    <h3>Example</h3>
+    <div class="w3-code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Title of the document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h1&gt;This is a heading&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+    </div>
+</div>
+
+<hr>
+
+<h2>Attributes</h2>
+
+<table>
+    <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>alink</td>
+        <td><i>color</i></td>
+        <td><span class="deprecated">Not supported in HTML5.</span><br>Specifies the color of an active link in a document</td>
+    </tr>
+    <tr>
+        <td>background</td>
+        <td><i>URL</i></td>
+        <td><span class="deprecated">Not supported in HTML5.</span><br>Specifies a background image for a document</td>
+    </tr>
+    <tr>
+        <td>bgcolor</td>
+        <td><i>color</i></td>
+        <td><span class="deprecated">Not supported in HTML5.</span><br>Specifies the background color of a document</td>
+    </tr>
+    <tr>
+        <td>link</td>
+        <td><i>color</i></td>
+        <td><span class="deprecated">Not supported in HTML5.</span><br>Specifies the color of unvisited links in a document</td>
+    </tr>
+    <tr>
+        <td>text</td>
+        <td><i>color</i></td>
+        <td><span class="deprecated">Not supported in HTML5.</span><br>Specifies the color of the text in a document</td>
+    </tr>
+    <tr>
+        <td>vlink</td>
+        <td><i>color</i></td>
+        <td><span class="deprecated">Not supported in HTML5.</span><br>Specifies the color of visited links in a document</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2>Global Attributes</h2>
+<p>The <code>&lt;body&gt;</code> tag also supports the <a href="tags/ref_standardattributes.asp">Global Attributes in HTML</a>.</p>
+
+<hr>
+
+<h2>Event Attributes</h2>
+<p>The <code>&lt;body&gt;</code> tag also supports the <a href="tags/ref_eventattributes.asp">Event Attributes in HTML</a>.</p>
+
+<hr>
+
+<h2>Default CSS Settings</h2>
+<p>Most browsers will display the <code>&lt;body&gt;</code> element with the following default values:</p>
+
+<div class="default-css">
+body {
+    display: block;
+    margin: 8px;
+}
+<br>
+body:focus {
+    outline: none;
+}
+</div>
+
+<hr>
+
+<h2>Related Pages</h2>
+<p>HTML tutorial: <a href="html/default.asp">HTML Elements</a></p>
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML font Tag</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        a{
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        h1 {
+            color: #4CAF50;
+            font-size: 42px;
+            font-weight: 400;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: #4CAF50;
+            font-size: 32px;
+            font-weight: 400;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .w3-note {
+            background-color: #ffffcc;
+            border-left: 6px solid #ffeb3b;
+            padding: 16px;
+            margin: 20px 0;
+        }
+        
+        .w3-example {
+            background-color: #f5f5f5;
+            padding: 16px;
+            margin: 20px 0;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .w3-code {
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+            font-size: 14px;
+            line-height: 1.4;
+            color: #000;
+            background-color: #fff;
+            padding: 12px;
+            border-left: 4px solid #4CAF50;
+            overflow: auto;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f5f5f5;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 10px 12px;
+        }
+        
+        .output-example {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 16px;
+            margin: 20px 0;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+        
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 20px 0;
+        }
+        
+        .deprecated {
+            color: #d63384;
+            font-weight: bold;
+        }
+        
+        .font-example {
+            font-family: Arial;
+            color: #FF0000;
+            size: 5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="breadcrumb">
+    <a href="exp1.html"> « HTML Tags Reference</a></div>
+
+<h1>HTML &lt;font&gt; Tag</h1>
+
+<div class="w3-note">
+    <p class="deprecated">Not Supported in HTML5.</p>
+    <p>The <code>&lt;font&gt;</code> tag was used in HTML4 to specify the font face, font size, and color of text.</p>
+</div>
+
+<hr>
+
+<h2>What to Use Instead?</h2>
+
+<div class="w3-example">
+    <h3>Example</h3>
+    <p>Use CSS to style text:</p>
+    <div class="w3-code">
+&lt;p style="font-family: Arial; color: #FF0000; font-size: 20px;"&gt;
+  This is styled text using CSS
+&lt;/p&gt;
+    </div>
+</div>
+
+<h3>Result:</h3>
+<div class="output-example">
+    <p style="font-family: Arial; color: #FF0000; font-size: 20px;">
+        This is styled text using CSS
+    </p>
+</div>
+
+<hr>
+
+<h2>Definition and Usage</h2>
+<p>The <code>&lt;font&gt;</code> tag was used in HTML4 to specify the font face, font size, and color of text.</p>
+<p class="deprecated">This element is obsolete in HTML5 and should not be used. Use CSS instead.</p>
+
+<hr>
+
+<h2>Attributes</h2>
+<table>
+    <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>color</td>
+        <td><i>color</i></td>
+        <td>Specifies the color of text</td>
+    </tr>
+    <tr>
+        <td>face</td>
+        <td><i>font_family</i></td>
+        <td>Specifies the font of text</td>
+    </tr>
+    <tr>
+        <td>size</td>
+        <td><i>number</i></td>
+        <td>Specifies the size of text (1-7)</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2>Browser Support</h2>
+<table>
+    <tr>
+        <th>Element</th>
+        <th>Chrome</th>
+        <th>Edge</th>
+        <th>Firefox</th>
+        <th>Safari</th>
+        <th>Opera</th>
+    </tr>
+    <tr>
+        <td><code>&lt;font&gt;</code></td>
+        <td>No</td>
+        <td>No</td>
+        <td>No</td>
+        <td>No</td>
+        <td>No</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2>Global Attributes</h2>
+<p>The <code>&lt;font&gt;</code> tag does not support any standard attributes in HTML5.</p>
+
+<hr>
+
+<h2>Event Attributes</h2>
+<p>The <code>&lt;font&gt;</code> tag does not support any event attributes in HTML5.</p>
+
+<hr>
+
+<h2>Default CSS Settings</h2>
+<p>Most browsers will display the <code>&lt;font&gt;</code> element with the following default values:</p>
+
+<div class="w3-code">
+font {
+    font-family: serif;
+    font-size: medium;
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+}
+</div>
+
+<hr>
+
+<h2>Related Pages</h2>
+<p>HTML tutorial: HTML Styles</p>
+<p>CSS tutorial: CSS Text</p>
+<p>CSS tutorial: CSS Fonts</p>
+
+</body>
+</html>
