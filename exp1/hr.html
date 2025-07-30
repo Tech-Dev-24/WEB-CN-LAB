@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML hr Tag</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #4CAF50;
+            font-size: 42px;
+            font-weight: 400;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: #4CAF50;
+            font-size: 32px;
+            font-weight: 400;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .note {
+            background-color: #ffffcc;
+            border-left: 6px solid #ffeb3b;
+            padding: 16px;
+            margin: 20px 0;
+        }
+        
+        .example {
+            background-color: #f5f5f5;
+            padding: 16px;
+            margin: 20px 0;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .code {
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+            font-size: 14px;
+            line-height: 1.4;
+            color: #000;
+            background-color: #fff;
+            padding: 12px;
+            border-left: 4px solid #4CAF50;
+            overflow: auto;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 10px 12px;
+        }
+        
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 20px 0;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 20px;
+        }
+        
+        .tryitbtn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        
+        .tryitbtn:hover {
+            background-color: #45a049;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .demo-hr {
+            margin: 20px 0;
+            border: 0;
+            height: 1px;
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="breadcrumb">
+    <a href="exp1.html">« HTML Tags Reference</a>
+</div>
+
+<h1>HTML &lt;hr&gt; Tag</h1>
+
+<div class="example">
+    <h3>Example</h3>
+    <p>Use the &lt;hr&gt; tag to define thematic changes in the content:</p>
+    <div class="code">
+        &lt;h1&gt;The Main Languages of the Web&lt;/h1&gt;<br>
+        &lt;p&gt;HTML is the standard markup language for creating Web pages.&lt;/p&gt;<br>
+        &lt;hr&gt;<br>
+        &lt;p&gt;CSS is a language that describes how HTML elements are to be displayed.&lt;/p&gt;<br>
+        &lt;hr&gt;<br>
+        &lt;p&gt;JavaScript is the programming language of HTML and the Web.&lt;/p&gt;
+    </div>
+    <button class="tryitbtn">Try it Yourself »</button>
+</div>
+
+<div class="example">
+    <h3>Result:</h3>
+    <h1>The Main Languages of the Web</h1>
+    <p>HTML is the standard markup language for creating Web pages.</p>
+    <hr class="demo-hr">
+    <p>CSS is a language that describes how HTML elements are to be displayed.</p>
+    <hr class="demo-hr">
+    <p>JavaScript is the programming language of HTML and the Web.</p>
+</div>
+
+<hr>
+
+<h2>Definition and Usage</h2>
+<p>The &lt;hr&gt; tag defines a thematic break in an HTML page (e.g. a shift of topic).</p>
+<p>The &lt;hr&gt; element is most often displayed as a horizontal rule that is used to separate content (or define a change) in an HTML page.</p>
+
+<div class="note">
+    <p><strong>Note:</strong> The &lt;hr&gt; tag also supports the <a href="#">Global Attributes</a> and <a href="#">Event Attributes</a> in HTML.</p>
+</div>
+
+<hr>
+
+<h2>Browser Support</h2>
+<table>
+    <tr>
+        <th>Element</th>
+        <th>Chrome</th>
+        <th>Edge</th>
+        <th>Firefox</th>
+        <th>Safari</th>
+        <th>Opera</th>
+    </tr>
+    <tr>
+        <td>&lt;hr&gt;</td>
+        <td>Yes</td>
+        <td>Yes</td>
+        <td>Yes</td>
+        <td>Yes</td>
+        <td>Yes</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2>Attributes</h2>
+<table>
+    <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>align</td>
+        <td>left<br>center<br>right</td>
+        <td>Specifies the alignment of a &lt;hr&gt; element. Not supported in HTML5.</td>
+    </tr>
+    <tr>
+        <td>noshade</td>
+        <td>noshade</td>
+        <td>Specifies that a &lt;hr&gt; element should render in one solid color (noshaded), instead of a shaded color. Not supported in HTML5.</td>
+    </tr>
+    <tr>
+        <td>size</td>
+        <td>pixels</td>
+        <td>Specifies the height of a &lt;hr&gt; element. Not supported in HTML5.</td>
+    </tr>
+    <tr>
+        <td>width</td>
+        <td>pixels<br>%</td>
+        <td>Specifies the width of a &lt;hr&gt; element. Not supported in HTML5.</td>
+    </tr>
+</table>
+
+<div class="note">
+    <p><strong>Note:</strong> The &lt;hr&gt; tag also supports the <a href="#">Global Attributes</a> and <a href="#">Event Attributes</a> in HTML.</p>
+</div>
+
+<hr>
+
+<h2>Default CSS Settings</h2>
+<p>Most browsers will display the &lt;hr&gt; element with the following default values:</p>
+
+<div class="code">
+    hr {
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 1px;
+    }
+</div>
+
+</body>
+</html>
