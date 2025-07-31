@@ -212,7 +212,13 @@
                         <tr>
                             <th scope="row">1</th>
                             <td>To create a simple webpage using HTML that includes all tags</td>
-                            <td><button class="btn-view"><a href="exp1/exp1.html">View</a></button></td>
+                            <td>
+                                <!--<form action="exp1/exp1.html" method="get" target="_blank">
+                                    <button type="submit" class="btn-view">View</button>
+                                </form>-->
+
+                                <button class="btn-view" onclick="window.open('exp1/exp1.html', '_blank')">View</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
