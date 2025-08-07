@@ -14,16 +14,15 @@
     }
 
     .table img {
-  height: 80px;
-  width: auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+      height: 80px;
+      width: auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.table img:hover {
-  transform: perspective(600px) rotateY(10deg) scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
+    .table img:hover {
+      transform: perspective(600px) rotateY(10deg) scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
 
     .catalogue-heading {
       margin: 40px 0 20px;
@@ -57,6 +56,41 @@
       margin: 0;
       font-size: 24px;
     }
+    
+    /* Sidebar Styles */
+    .sidebar {
+      background-color: #f8f9fa;
+      min-height: calc(100vh - 150px);
+      padding: 20px;
+      border-right: 1px solid #dee2e6;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+    
+    .sidebar h5 {
+      color: #495057;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #dee2e6;
+      margin-bottom: 20px;
+    }
+    
+    .nav-link1 {
+      display: block;
+      padding: 8px 15px;
+      color: #495057;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link1:hover {
+      background-color: #e9ecef;
+      color: #0d6efd;
+      transform: translateX(5px);
+    }
+    
+    .main-content {
+      padding: 20px;
+    }
   </style>
 </head>
 <body>
@@ -85,59 +119,76 @@
     </div>
   </nav>
 
-  <!-- Catalogue Title -->
-  <div class="catalogue-heading">
-    <h2>Catalogue</h2>
-  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-2 sidebar">
+        <h5 class="text-center">Categories</h5>
+        <div class="d-flex flex-column gap-2">
+          <a class="nav-link1" href="catalogue.html">Computer Science</a>
+          <a class="nav-link1" href="catalogue.html">Information Technology</a>
+          <a class="nav-link1" href="catalogue.html">Data Analytics</a>
+        </div>
+      </div>
 
-  <!-- Catalogue Table -->
-  <div class="catalogue-table">
-    <table class="table table-bordered table-striped align-middle">
-      <thead class="table-light">
-        <tr>
-          <th>Snapshot</th>
-          <th>Book</th>
-          <th>Author</th>
-          <th>Publication</th>
-          <th>Price</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><img src="assests/xml.png" alt="XML Bible" /></td>
-          <td>XML Bible</td>
-          <td>Winston</td>
-          <td>Wiley</td>
-          <td>Rs 40.5</td>
-          <td><button class="btn btn-success add-to-cart">Add to Cart</button></td>
-        </tr>
-        <tr>
-          <td><img src="assests/ai.jpg" alt="AI" /></td>
-          <td>AI</td>
-          <td>S. Russel</td>
-          <td>Princeton Hall</td>
-          <td>Rs 63</td>
-          <td><button class="btn btn-success add-to-cart">Add to Cart</button></td>
-        </tr>
-        <tr>
-          <td><img src="assests/java.png" alt="Java 2" /></td>
-          <td>Java</td>
-          <td>Watson</td>
-          <td>BPB Publications</td>
-          <td>Rs 35.5</td>
-          <td><button class="btn btn-success add-to-cart">Add to Cart</button></td>
-        </tr>
-        <tr>
-          <td><img src="assests/html.png" alt="HTML in 24 hours" /></td>
-          <td>HTML in 24 hours</td>
-          <td>Sam Peter</td>
-          <td>Sam Publication</td>
-          <td>Rs 50</td>
-          <td><button class="btn btn-success add-to-cart">Add to Cart</button></td>
-        </tr>
-      </tbody>
-    </table>
+      <!-- Main Content -->
+      <div class="col-md-10 main-content">
+        <!-- Catalogue Title -->
+        <div class="catalogue-heading">
+          <h2>Catalogue</h2>
+        </div>
+
+        <!-- Catalogue Table -->
+        <div class="catalogue-table">
+          <table class="table table-bordered table-striped align-middle">
+            <thead class="table-light">
+              <tr>
+                <th>Snapshot</th>
+                <th>Book</th>
+                <th>Author</th>
+                <th>Publication</th>
+                <th>Price</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="assests/xml.png" alt="XML Bible" /></td>
+                <td>XML Bible</td>
+                <td>Winston</td>
+                <td>Wiley</td>
+                <td>Rs 40.5</td>
+                <td><button class="btn btn-success add-to-cart">Add to Cart</button></td>
+              </tr>
+              <tr>
+                <td><img src="assests/ai.jpg" alt="AI" /></td>
+                <td>AI</td>
+                <td>S. Russel</td>
+                <td>Princeton Hall</td>
+                <td>Rs 63</td>
+                <td><button class="btn btn-success add-to-cart">Add to Cart</button></td>
+              </tr>
+              <tr>
+                <td><img src="assests/java.png" alt="Java 2" /></td>
+                <td>Java</td>
+                <td>Watson</td>
+                <td>BPB Publications</td>
+                <td>Rs 35.5</td>
+                <td><button class="btn btn-success add-to-cart">Add to Cart</button></td>
+              </tr>
+              <tr>
+                <td><img src="assests/html.png" alt="HTML in 24 hours" /></td>
+                <td>HTML in 24 hours</td>
+                <td>Sam Peter</td>
+                <td>Sam Publication</td>
+                <td>Rs 50</td>
+                <td><button class="btn btn-success add-to-cart">Add to Cart</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Bootstrap Modal -->
@@ -161,38 +212,37 @@
   <!-- Bootstrap JS & Alert Script -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-  const addToCartButtons = document.querySelectorAll(".add-to-cart");
+    const addToCartButtons = document.querySelectorAll(".add-to-cart");
 
-  addToCartButtons.forEach(button => {
-    button.addEventListener("click", function () {
-      const row = button.closest("tr");
-      const bookName = row.children[1].textContent;
-      const priceText = row.children[4].textContent;
-      const price = parseFloat(priceText.replace("Rs", "").trim());
+    addToCartButtons.forEach(button => {
+      button.addEventListener("click", function () {
+        const row = button.closest("tr");
+        const bookName = row.children[1].textContent;
+        const priceText = row.children[4].textContent;
+        const price = parseFloat(priceText.replace("Rs", "").trim());
 
-      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-      // Check if book already exists in cart
-      const existing = cart.find(item => item.book === bookName);
-      if (existing) {
-        existing.quantity += 1;
-        existing.total = existing.quantity * existing.price;
-      } else {
-        cart.push({
-          book: bookName,
-          price: price,
-          quantity: 1,
-          total: price
-        });
-      }
+        // Check if book already exists in cart
+        const existing = cart.find(item => item.book === bookName);
+        if (existing) {
+          existing.quantity += 1;
+          existing.total = existing.quantity * existing.price;
+        } else {
+          cart.push({
+            book: bookName,
+            price: price,
+            quantity: 1,
+            total: price
+          });
+        }
 
-      localStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem("cart", JSON.stringify(cart));
 
-      // Redirect to cart.html
-      window.location.href = "cart.html";
+        // Redirect to cart.html
+        window.location.href = "cart.html";
+      });
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
