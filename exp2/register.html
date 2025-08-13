@@ -7,65 +7,94 @@
     <title>Registration Form</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* General styling for the body */
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('assets/cover-image.avif') no-repeat center center fixed;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.7), 
+                rgba(0, 0, 0, 0.7)),
+                url('assets/cover-image.avif') no-repeat center center fixed;
             background-size: cover;
-            color: #f8f9fa;
+            color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
             margin: 0;
-            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
         }
 
-        /* Styling for the heading */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         h1 {
             text-align: center;
             color: #ffffff;
-            font-weight: 600;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            animation: slideDown 0.8s ease-out;
         }
 
-        /* Form styling */
+        @keyframes slideDown {
+            from { 
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to { 
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
         form {
-            background-color: rgb(18, 20, 21);
+            background-color: rgba(255, 255, 255, 0.15);
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(16, 193, 213, 0.3);
-            border: 1px solid rgba(25, 24, 23, 0.868);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             width: 350px;
-            backdrop-filter: blur(5px);
-            transition: transform 0.3s ease;
+            backdrop-filter: blur(8px);
+            transform: scale(1);
+            transition: all 0.4s ease;
+            animation: formFadeIn 1s ease-out 0.2s both;
+        }
+
+        @keyframes formFadeIn {
+            from { 
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to { 
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         form:hover {
-            transform: translateY(-5px);
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
         }
 
-        /* Label styling */
         label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 500;
-            color: #f8f9fa;
-            font-size: 14px;
+            color: #ffffff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
         }
 
-        /* Input field styling */
         input, select, textarea {
             width: 100%;
             padding: 12px;
             margin-bottom: 20px;
-            border: 1px solid #444;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 8px;
-            background-color: rgba(68, 71, 90, 0.5);
-            color: #f8f9fa;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: #ffffff;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
             transition: all 0.3s ease;
@@ -73,9 +102,13 @@
 
         input:focus, select:focus, textarea:focus {
             outline: none;
-            border-color: #0073e6;
-            box-shadow: 0 0 0 2px rgba(10, 86, 162, 0.2);
-            background-color: rgba(68, 71, 90, 0.8);
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
         }
 
         /* Radio button styling */
@@ -93,35 +126,61 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .radio-options div:hover {
+            transform: scale(1.05);
         }
         
         input[type="radio"] {
             width: 18px;
             height: 18px;
             margin: 0;
-            accent-color: #0073e6;
+            accent-color: #4a90e2;
+            transition: all 0.3s ease;
+        }
+
+        input[type="radio"]:hover {
+            transform: scale(1.2);
         }
 
         /* Checklist styling */
         .checklist {
-            border: 1px solid #444;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 8px;
             padding: 15px;
-            background-color: rgba(68, 71, 90, 0.5);
+            background-color: rgba(0, 0, 0, 0.3);
             margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .checklist:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+            border-color: #4a90e2;
         }
         
         .checklist-item {
             display: flex;
             align-items: center;
             padding: 8px 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .checklist-item:hover {
+            transform: translateX(5px);
         }
         
         .checklist-item input {
             width: 18px;
             height: 18px;
             margin: 0 10px 0 0;
-            accent-color: #0073e6;
+            accent-color: #4a90e2;
+            transition: all 0.3s ease;
+        }
+        
+        .checklist-item input:hover {
+            transform: scale(1.2);
         }
         
         .checklist-item label {
@@ -147,12 +206,11 @@
             resize: vertical;
         }
 
-        /* Button styling */
         .button-group {
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         button {
@@ -160,39 +218,82 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            font-weight: 500;
+            font-weight: 600;
             font-family: 'Poppins', sans-serif;
             transition: all 0.3s ease;
-            flex: 1;
+            transform: translateY(0);
         }
 
         button[type="submit"] {
-            background-color: #0073e6;
+            background-color: #4a90e2;
             color: white;
         }
 
         button[type="submit"]:hover {
-            background-color: #0060c0;
+            background-color: #3a7bc8;
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         button[type="reset"] {
-            background-color: #444;
+            background-color: rgba(255, 255, 255, 0.1);
             color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         button[type="reset"]:hover {
-            background-color: #333;
+            background-color: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Login link */
+        .login-link {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        a {
+            color: #4a90e2;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        a:hover {
+            color: #ffffff;
+            background-color: rgba(74, 144, 226, 0.2);
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #4a90e2;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
         }
 
         /* Responsive adjustments */
         @media (max-width: 480px) {
             form {
-                width: 100%;
-                padding: 20px;
+                width: 90%;
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2rem;
             }
             
             .radio-options {
@@ -296,8 +397,12 @@
         <textarea name="address" id="address" required placeholder="Your full address"></textarea>
         
         <div class="button-group">
-            <button type="submit">Register</button> 
+            <button type="submit">Register</button>
             <button type="reset">Reset</button>
+        </div>
+        
+        <div class="login-link">
+            <a href="login.html">Already have an account? Login</a>
         </div>
     </form>
     <script>
@@ -310,7 +415,13 @@ document.querySelector('form').addEventListener('submit', function(event) {
     const isPhoneValid = validatePhone();
     
     if (isNameValid && isEmailValid && isPasswordValid && isPhoneValid) {
-        this.submit();
+        // Add animation before submission
+        const form = this;
+        form.style.animation = 'formFadeIn 0.5s 3 alternate';
+        
+        setTimeout(() => {
+            form.submit();
+        }, 1500);
     }
 });
 
@@ -320,13 +431,11 @@ function validateName() {
     const nameRegex = /^[a-zA-Z \-']{6,}$/;
     
     if (!nameValue) {
-        alert("Name cannot be empty");
-        nameInput.focus();
+        showErrorAnimation(nameInput, "Name cannot be empty");
         return false;
     }
     if (!nameRegex.test(nameValue)) {
-        alert("Name must be at least 6 characters and only contain letters, hyphens, or apostrophes");
-        nameInput.focus();
+        showErrorAnimation(nameInput, "Name must be at least 6 characters and only contain letters, hyphens, or apostrophes");
         return false;
     }
     return true;
@@ -338,13 +447,11 @@ function validateEmail() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     
     if (!emailValue) {
-        alert("Email cannot be empty");
-        emailInput.focus();
+        showErrorAnimation(emailInput, "Email cannot be empty");
         return false;
     }
     if (!emailRegex.test(emailValue)) {
-        alert("Please enter a valid email (e.g., user@example.com)");
-        emailInput.focus();
+        showErrorAnimation(emailInput, "Please enter a valid email (e.g., user@example.com)");
         return false;
     }
     return true;
@@ -356,13 +463,11 @@ function validatePassword() {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
     
     if (!passwordValue) {
-        alert("Password cannot be empty");
-        passwordInput.focus();
+        showErrorAnimation(passwordInput, "Password cannot be empty");
         return false;
     }
     if (!passwordRegex.test(passwordValue)) {
-        alert("Password must be at least 6 characters and include uppercase, lowercase, number, and special character");
-        passwordInput.focus();
+        showErrorAnimation(passwordInput, "Password must be at least 6 characters and include uppercase, lowercase, number, and special character");
         return false;
     }
     return true;
@@ -374,17 +479,50 @@ function validatePhone() {
     const phoneRegex = /^\d{10}$/;
     
     if (!phoneValue) {
-        alert("Phone number cannot be empty");
-        phoneInput.focus();
+        showErrorAnimation(phoneInput, "Phone number cannot be empty");
         return false;
     }
     if (!phoneRegex.test(phoneValue)) {
-        alert("Phone number must be 10 digits (e.g., 9876543210)");
-        phoneInput.focus();
+        showErrorAnimation(phoneInput, "Phone number must be 10 digits (e.g., 9876543210)");
         return false;
     }
     return true;
 }
+
+function showErrorAnimation(element, message) {
+    // Store original styles
+    const originalBorder = element.style.border;
+    const originalBgColor = element.style.backgroundColor;
+    
+    // Apply error animation
+    element.style.border = '2px solid #ff3860';
+    element.style.backgroundColor = 'rgba(255, 56, 96, 0.1)';
+    element.style.animation = 'shake 0.5s';
+    
+    // Show error message
+    alert(message);
+    
+    // Focus on the element
+    element.focus();
+    
+    // Reset styles after animation
+    setTimeout(() => {
+        element.style.border = originalBorder;
+        element.style.backgroundColor = originalBgColor;
+        element.style.animation = '';
+    }, 1000);
+}
+
+// Add shake animation for errors
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+        20%, 40%, 60%, 80% { transform: translateX(5px); }
+    }
+`;
+document.head.appendChild(style);
 </script>
 </body>
 </html>
