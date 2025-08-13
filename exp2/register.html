@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register E-Book</title>
+    <title>Registration Form</title>
     <style>
         /* General styling for the body */
         body {
@@ -43,7 +43,7 @@
         }
 
         /* Input field styling */
-        input {
+        input, select, textarea {
             width: 100%;
             padding: 8px;
             margin-bottom: 15px;
@@ -52,6 +52,70 @@
             background-color: #222;
             color: white;
             box-sizing: border-box;
+        }
+
+        /* Radio button styling */
+        .radio-group {
+            margin-bottom: 15px;
+        }
+        
+        .radio-options {
+            display: flex;
+            gap: 15px;
+            margin-top: 5px;
+        }
+        
+        .radio-options div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        input[type="radio"] {
+            width: auto;
+            margin: 0;
+        }
+
+        /* Checklist styling */
+        .checklist {
+            border: 1px solid #444;
+            border-radius: 4px;
+            padding: 10px;
+            background-color: #222;
+            margin-bottom: 15px;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            padding: 5px 0;
+        }
+        
+        .checklist-item input {
+            width: auto;
+            margin: 0 8px 0 0;
+        }
+        
+        .checklist-item label {
+            margin: 0;
+            font-weight: normal;
+        }
+
+        /* Date select boxes */
+        .date-select {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .date-select select {
+            flex: 1;
+        }
+
+        /* Textarea styling */
+        textarea {
+            height: 80px;
+            resize: vertical;
         }
 
         /* Button styling */
@@ -85,19 +149,99 @@
 </head>
 
 <body>
-    <h1>Sign-Up</h1><br>
+    <h1>Registration Form</h1><br>
     <form action="login.html">
-        <label for="username">Username : </label>
-        <input type="text" name="username" id="username">
+        <label for="name">Full Name : </label>
+        <input type="text" name="name" id="name" required>
         
         <label for="email">Email : </label>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" required>
         
         <label for="password">Password : </label>
-        <input type="password" name="password" id="password">
+        <input type="password" name="password" id="password" required>
+        
+        <label for="phone">Phone Number : </label>
+        <input type="tel" name="phone" id="phone" required>
+        
+        <div class="radio-group">
+            <label>Sex : </label>
+            <div class="radio-options">
+                <div>
+                    <input type="radio" name="sex" id="male" value="male" checked>
+                    <label for="male">Male</label>
+                </div>
+                <div>
+                    <input type="radio" name="sex" id="female" value="female">
+                    <label for="female">Female</label>
+                </div>
+                <div>
+                    <input type="radio" name="sex" id="other" value="other">
+                    <label for="other">Other</label>
+                </div>
+            </div>
+        </div>
+        
+        <label>Date of Birth : </label>
+        <div class="date-select">
+            <select name="day" required>
+                <option value="">Day</option>
+                <script>
+                    for(let i=1; i<=31; i++) {
+                        document.write(`<option value="${i}">${i}</option>`);
+                    }
+                </script>
+            </select>
+            <select name="month" required>
+                <option value="">Month</option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
+            <select name="year" required>
+                <option value="">Year</option>
+                <script>
+                    const currentYear = new Date().getFullYear();
+                    for(let i=currentYear; i>=1900; i--) {
+                        document.write(`<option value="${i}">${i}</option>`);
+                    }
+                </script>
+            </select>
+        </div>
+        
+        <label>Languages Known : </label>
+        <div class="checklist">
+            <div class="checklist-item">
+                <input type="checkbox" name="languages" id="english" value="english">
+                <label for="english">English</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" name="languages" id="telugu" value="telugu">
+                <label for="telugu">Telugu</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" name="languages" id="hindi" value="hindi">
+                <label for="hindi">Hindi</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" name="languages" id="tamil" value="tamil">
+                <label for="tamil">Tamil</label>
+            </div>
+        </div>
+        
+        <label for="address">Address : </label>
+        <textarea name="address" id="address" required></textarea>
         
         <div style="text-align: center; margin-top: 20px;">
-            <button type="submit">Sign Up</button> 
+            <button type="submit">Register</button> 
             <button type="reset">Reset</button>
         </div>
     </form>
