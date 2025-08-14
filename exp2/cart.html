@@ -84,6 +84,32 @@
     a.btn-warning {
       text-decoration: none;
     }
+    
+    /* Quantity controls */
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+    }
+    
+    .quantity-btn {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #dee2e6;
+      background-color: #f8f9fa;
+      cursor: pointer;
+    }
+    
+    .quantity-input {
+      width: 50px;
+      text-align: center;
+      margin: 0 5px;
+    }
+    
+    .remove-btn {
+      color: #dc3545;
+      cursor: pointer;
+      margin-left: 10px;
+    }
   </style>
 </head>
 
@@ -139,6 +165,7 @@
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Total</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody id="cart-body">
@@ -148,6 +175,7 @@
               <tr>
                 <th colspan="3" class="text-end">Grand Total</th>
                 <th id="grand-total">Rs 0</th>
+                <th></th>
               </tr>
             </tfoot>
           </table>
@@ -171,13 +199,21 @@
       cartBody.innerHTML = "";
       let totalAmount = 0;
 
-      cart.forEach(item => {
+      cart.forEach((item, index) => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
           <td>${item.book}</td>
           <td>Rs ${item.price.toFixed(2)}</td>
-          <td>${item.quantity}</td>
-          <td>Rs ${item.total.toFixed(2)}</td>
+          <td>
+            <div class="quantity-controls">
+              <button class="quantity-btn" onclick="updateQuantity(${index}, -1)">-</button>
+              <input type="number" class="quantity-input" value="${item.quantity}" min="1" 
+                     onchange="updateQuantityInput(${index}, this.value)" id="qty-${index}">
+              <button class="quantity-btn" onclick="updateQuantity(${index}, 1)">+</button>
+            </div>
+          </td>
+          <td id="item-total-${index}">Rs ${item.total.toFixed(2)}</td>
+          <td><span class="remove-btn" onclick="removeItem(${index})">Remove</span></td>
         `;
         cartBody.appendChild(tr);
         totalAmount += item.total;
@@ -186,12 +222,53 @@
       grandTotal.textContent = `Rs ${totalAmount.toFixed(2)}`;
     }
 
+    function updateQuantity(index, change) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      if (cart[index]) {
+        const newQuantity = cart[index].quantity + change;
+        if (newQuantity >= 1) {
+          cart[index].quantity = newQuantity;
+          cart[index].total = cart[index].price * newQuantity;
+          localStorage.setItem("cart", JSON.stringify(cart));
+          loadCart();
+        }
+      }
+    }
+
+    function updateQuantityInput(index, newValue) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      if (cart[index]) {
+        const newQuantity = parseInt(newValue);
+        if (!isNaN(newQuantity) && newQuantity >= 1) {
+          cart[index].quantity = newQuantity;
+          cart[index].total = cart[index].price * newQuantity;
+          localStorage.setItem("cart", JSON.stringify(cart));
+          loadCart();
+        } else {
+          // Reset to previous value if invalid
+          document.getElementById(`qty-${index}`).value = cart[index].quantity;
+        }
+      }
+    }
+
+    function removeItem(index) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      loadCart();
+    }
+
     function clearCart() {
       localStorage.removeItem("cart");
       loadCart();
     }
 
     function placeOrder() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+      }
       alert("Order placed successfully!");
       clearCart();
     }
