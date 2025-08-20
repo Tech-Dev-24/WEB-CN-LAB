@@ -3,203 +3,504 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Development</title>
-    <!-- Bootstrap CSS -->
+    <title>WebDev Learning Hub</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px 0;
-        }
-        .header-img {
-            height: 60px;
-            margin-right: 20px;
-        }
-        .content-section {
-            padding: 40px 0;
-            background-color: #f8f9fa;
-        }
-        footer {
-            background-color: #343a40;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        /* Neo White Header Styles */
-        .neo-white-header {
-            background-color: #f8f9fa;
-            color: #212529;
-            border-bottom: 1px solid #dee2e6;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        :root {
+            --primary: #6c63ff;
+            --secondary: #4a40cc;
+            --accent: #ff6b6b;
+            --light: #f8f9fa;
+            --dark: #212529;
         }
         
-        /* Improved Navigation Bar */
-        .navbar-custom {
-            background-color: #2c3e50 !important; /* Dark blue-gray */
-            padding-right: 1rem; /* Added right padding for the navbar */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            overflow-x: hidden;
         }
         
-        .navbar-custom .navbar-nav {
-            margin-right: -20px; /* Pulls the nav items closer to the right edge */
-        }
-        
-        .navbar-custom .navbar-nav .nav-link {
-            color: #ecf0f1; /* Light gray */
-            padding: 8px 15px;
-            margin: 0 5px;
-            border-radius: 4px;
+        /* Header Styles */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
             transition: all 0.3s ease;
         }
         
-        .navbar-custom .navbar-nav .nav-link:hover,
-        .navbar-custom .navbar-nav .nav-link:focus {
-            background-color: #3498db; /* Bright blue */
-            color: white;
-        }
-        
-        .navbar-custom .navbar-nav .nav-link.active {
-            background-color: #2980b9; /* Slightly darker blue */
-            color: white;
-            font-weight: 500;
-        }
-        
-        .navbar-toggler {
-            border-color: rgba(255,255,255,0.5);
-            margin-right: 0; /* Align toggle to right edge */
-        }
-        
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
-        
-        /* Card Styles */
-        .frontend-card {
-            background-color: #e3f2fd;
-            border-left: 5px solid #2196F3;
-            border-radius: 0 8px 8px 0;
-            padding: 20px;
-            height: 100%;
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            color: var(--primary);
             transition: transform 0.3s ease;
         }
-        .frontend-card:hover {
-            transform: translateY(-5px);
+        
+        .navbar-brand:hover {
+            transform: scale(1.05);
         }
         
-        .backend-card {
-            background-color: #e8f5e9;
-            border-left: 5px solid #4CAF50;
-            border-radius: 0 8px 8px 0;
-            padding: 20px;
-            height: 100%;
-            transition: transform 0.3s ease;
-        }
-        .backend-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        h1 {
-            color: #2c3e50;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-        }
-        
-        h2 {
-            color: #3498db;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-            display: inline-block;
-        }
-        
-        h3 {
-            color: #e74c3c;
-        }
-        
-        .footer-highlight {
-            color: #f1c40f;
+        .logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            background: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
             font-weight: bold;
+        }
+        
+        .nav-link {
+            color: var(--dark);
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        /* Content Sections */
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            padding: 15px 20px;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        /* Animation Classes */
+        .animate-pop {
+            animation: popIn 0.5s ease-out;
+        }
+        
+        .animate-fade {
+            animation: fadeIn 1s ease;
+        }
+        
+        .animate-slide {
+            animation: slideIn 0.8s ease;
+        }
+        
+        /* Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from { 
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes popIn {
+            0% { 
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% { 
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+        
+        .footer-disclaimer {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 20px;
+        }
+        
+        /* Progress Bars */
+        .progress {
+            height: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background: #e9ecef;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            border-radius: 5px;
+            transition: width 1.5s ease;
+        }
+        
+        /* Hover Effects */
+        .hover-lift {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section with Neo White Color -->
-    <header class="neo-white-header">
+    <!-- Header with Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
-            <div class="header-content">
-                <img src="https://cdn-icons-png.flaticon.com/512/2282/2282188.png" alt="Web Development Icon" class="header-img">
-                <h1>WEB DEVELOPMENT</h1>
-            </div>
-        </div>
-    </header>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <div class="logo">
+                    <i class="fas fa-code"></i>
+                </div>
+                Web Dev Hub
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-
-                        <a class="nav-link" href="home.html">Home</a>
+                        <a class="nav-link" href="home.html"><i class="fas fa-home me-1"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="experiments.html">Experiments</a>
+                        <a class="nav-link" href="experiments.html"><i class="fas fa-flask me-1"></i> Experiment</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="syllabus.html">Syllabus</a>
+                        <a class="nav-link" href="syllabus.html"><i class="fas fa-book me-1"></i> Syllabus</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about.html"><i class="fas fa-info-circle me-1"></i> About</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Content Section -->
-    <section class="content-section">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <h2 class="text-center mb-4">Basic Knowledge of Web Development</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="frontend-card">
-                        <h3>Frontend Development</h3>
-                        <p>Frontend development involves creating the user interface and user experience of a website. It primarily uses three core technologies:</p>
-                        <ul>
-                            <li><strong>HTML</strong> (HyperText Markup Language) - The structure of web pages</li>
-                            <li><strong>CSS</strong> (Cascading Style Sheets) - The styling and layout</li>
-                            <li><strong>JavaScript</strong> - The behavior and interactivity</li>
-                        </ul>
-                        <p>Modern frontend development often uses frameworks like React, Angular, or Vue.js to build complex applications.</p>
+            <h1 class="animate-pop">Master Web Development</h1>
+            <p class="animate-fade">Learn the essential skills to become a professional web developer. From HTML basics to advanced JavaScript frameworks.</p>
+            <button class="btn btn-light btn-lg px-4 py-2 hover-lift animate-slide">Start Learning Now</button>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <h2 class="section-title">Web Development Roadmap</h2>
+        
+        <div class="row">
+            <!-- HTML -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 animate-pop">
+                    <div class="card-header d-flex align-items-center">
+                        <i class="fab fa-html5 me-2"></i> HTML5
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">HyperText Markup Language</h5>
+                        <p class="card-text">The foundation of all websites. Learn semantic markup, forms, accessibility, and modern HTML5 features.</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" style="width: 95%"></div>
+                        </div>
+                        <small>Estimated mastery: 3 weeks</small>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="backend-card">
-                        <h3>Backend Development</h3>
-                        <p>Backend development handles the server-side logic, databases, and application functionality. Common backend technologies include:</p>
-                        <ul>
-                            <li>Server-side languages like Node.js, Python, PHP, Ruby, or Java</li>
-                            <li>Databases like MySQL, PostgreSQL, or MongoDB</li>
-                            <li>Web servers like Apache or Nginx</li>
-                        </ul>
-                        <p>Backend frameworks such as Express (Node.js), Django (Python), or Laravel (PHP) help streamline development.</p>
+            </div>
+            
+            <!-- CSS -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 animate-pop">
+                    <div class="card-header d-flex align-items-center">
+                        <i class="fab fa-css3-alt me-2"></i> CSS3
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Cascading Style Sheets</h5>
+                        <p class="card-text">Style your websites with CSS. Master flexbox, grid, animations, and responsive design principles.</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" style="width: 85%"></div>
+                        </div>
+                        <small>Estimated mastery: 4 weeks</small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- JavaScript -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 animate-pop">
+                    <div class="card-header d-flex align-items-center">
+                        <i class="fab fa-js-square me-2"></i> JavaScript
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Interactive Web Development</h5>
+                        <p class="card-text">Add interactivity to your websites. Learn ES6+, DOM manipulation, async programming, and APIs.</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" style="width: 75%"></div>
+                        </div>
+                        <small>Estimated mastery: 6 weeks</small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bootstrap -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 animate-pop">
+                    <div class="card-header d-flex align-items-center">
+                        <i class="fas fa-th me-2"></i> Bootstrap
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Frontend Framework</h5>
+                        <p class="card-text">Build responsive websites quickly with the world's most popular CSS framework.</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" style="width: 80%"></div>
+                        </div>
+                        <small>Estimated mastery: 2 weeks</small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- React -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 animate-pop">
+                    <div class="card-header d-flex align-items-center">
+                        <i class="fab fa-react me-2"></i> React.js
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">JavaScript Library</h5>
+                        <p class="card-text">Build user interfaces with this declarative, component-based library developed by Facebook.</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" style="width: 65%"></div>
+                        </div>
+                        <small>Estimated mastery: 8 weeks</small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Node.js -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 animate-pop">
+                    <div class="card-header d-flex align-items-center">
+                        <i class="fab fa-node-js me-2"></i> Node.js
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Server-Side JavaScript</h5>
+                        <p class="card-text">Build scalable network applications using JavaScript on the server side.</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" style="width: 70%"></div>
+                        </div>
+                        <small>Estimated mastery: 7 weeks</small>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        
+        <!-- Additional Information -->
+        <div class="row mt-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="card animate-fade">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">How to Become a Web Developer</h3>
+                        <p>Becoming a web developer requires learning several technologies and concepts:</p>
+                        
+                        <ol>
+                            <li class="mb-2"><strong>Master the fundamentals:</strong> HTML, CSS, and JavaScript</li>
+                            <li class="mb-2"><strong>Learn responsive design:</strong> Ensure websites work on all devices</li>
+                            <li class="mb-2"><strong>Version control:</strong> Git is essential for collaboration</li>
+                            <li class="mb-2"><strong>Frontend frameworks:</strong> React, Angular, or Vue.js</li>
+                            <li class="mb-2"><strong>Backend technologies:</strong> Node.js, Python, PHP, or Ruby</li>
+                            <li class="mb-2"><strong>Databases:</strong> SQL and NoSQL databases</li>
+                            <li class="mb-2"><strong>Deployment:</strong> Learn how to deploy applications</li>
+                        </ol>
+                        
+                        <p class="mt-4">Practice by building projects, contribute to open source, and never stop learning as web technologies evolve rapidly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- Footer Section -->
-    <footer>
+    <!-- Footer -->
+    <footer class="text-center">
         <div class="container">
-            <p class="mb-1">© 2023 <span class="footer-highlight">Web Development Portal</span>. All rights reserved.</p>
-            <p class="mb-0"><small>Disclaimer: The information provided on this website is for educational purposes only. The content is provided "as is" without warranty of any kind.</small></p>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <h5>Web Dev Learning Hub</h5>
+                    <p>Your comprehensive resource for learning web development from scratch to advanced topics.</p>
+                </div>
+            </div>
+            
+            <hr class="my-4 bg-light">
+            
+            <p class="footer-disclaimer">
+                Disclaimer: The information provided on this website is for educational purposes only. While we strive to provide accurate and up-to-date information, we make no representations or warranties of any kind.
+            </p>
+            
+            <p class="mb-0">
+                &copy; 2025 Web Dev Learning Hub. All rights reserved.
+            </p>
         </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-pop, .animate-fade, .animate-slide');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.visibility = 'visible';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(el => {
+                el.style.visibility = 'hidden';
+                observer.observe(el);
+            });
+            
+            // Animate progress bars when they come into view
+            const progressBars = document.querySelectorAll('.progress-bar');
+            
+            const progressObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.style.width;
+                        entry.target.style.width = '0';
+                        setTimeout(() => {
+                            entry.target.style.width = width;
+                        }, 300);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            progressBars.forEach(bar => {
+                progressObserver.observe(bar);
+            });
+        });
+    </script>
 </body>
 </html>

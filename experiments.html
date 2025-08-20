@@ -7,183 +7,295 @@
     <title>Web Development Syllabus</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Header and Navbar Styles */
-        .header-content {
+        :root {
+            --primary: #6c63ff;
+            --secondary: #4a40cc;
+            --accent: #ff6b6b;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            overflow-x: hidden;
+            background-color: #f8f9fa;
+        }
+        
+        /* Header Styles */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+        
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            background: var(--primary);
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px 0;
-        }
-
-        .header-img {
-            height: 60px;
-            margin-right: 20px;
-        }
-
-        .neo-white-header {
-            background-color: #f8f9fa;
-            color: #212529;
-            border-bottom: 1px solid #dee2e6;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Navigation Bar */
-        .navbar-custom {
-            background-color: #2c3e50 !important;
-            padding-right: 1rem;
-        }
-
-        .navbar-custom .navbar-nav {
-            margin-right: -20px;
-        }
-
-        .navbar-custom .navbar-nav .nav-link {
-            color: #ecf0f1;
-            padding: 8px 15px;
-            margin: 0 5px;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-custom .navbar-nav .nav-link:hover,
-        .navbar-custom .navbar-nav .nav-link:focus {
-            background-color: #3498db;
             color: white;
+            font-weight: bold;
         }
-
-        .navbar-custom .navbar-nav .nav-link.active {
-            background-color: #2980b9;
-            color: white;
+        
+        .nav-link {
+            color: var(--dark);
             font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+            transition: color 0.3s ease;
         }
-
-        .navbar-toggler {
-            border-color: rgba(255, 255, 255, 0.5);
-            margin-right: 0;
+        
+        .nav-link:hover {
+            color: var(--primary);
         }
-
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 10px;
+            transition: width 0.3s ease;
         }
-
-        /* Syllabus Table Styles */
-        body {
-            background-color: #f8f9fa;
-            padding-top: 0;
+        
+        .nav-link:hover::after {
+            width: 100%;
         }
-
+        
+        .nav-link.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        /* Syllabus Header */
         .syllabus-header {
-            background-color: #2c3e50;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
-            padding: 20px 0;
+            padding: 40px 0;
             margin-bottom: 30px;
-            border-radius: 5px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(108, 99, 255, 0.3);
         }
-
+        
+        /* Syllabus Table Styles */
         .syllabus-table {
             background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+            border-radius: 15px;
             overflow: hidden;
+            margin-bottom: 40px;
         }
-
+        
         .table {
-            border: 2px solid #000;
             margin-bottom: 0;
+            border: none;
         }
-
+        
         .table thead {
-            background-color: #3498db;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
         }
-
+        
         .table th,
         .table td {
-            border: 4px solid #000;
-            padding: 12px 15px;
+            padding: 16px 20px;
             vertical-align: middle;
+            border: none;
         }
-
-        .table thead th {
-            border-bottom: 2px solid #000;
+        
+        .table th {
+            font-weight: 600;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.05);
         }
-
-        .table tbody tr:nth-child(odd) {
-            background-color: #f8f9fa;
+        
+        .table tbody tr {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
         }
-
+        
+        .table tbody tr:last-child {
+            border-bottom: none;
+        }
+        
         .table tbody tr:hover {
-            background-color: #e9f7fe;
+            background-color: rgba(108, 99, 255, 0.05);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-
-        .sub-item {
-            padding-left: 30px !important;
-            font-style: italic;
-        }
-
-        .footer {
-            background-color: #343a40;
+        
+        .btn-view {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
-            padding: 20px 0;
-            margin-top: 30px;
-            border-top: 2px solid #000;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(108, 99, 255, 0.3);
         }
-
+        
+        .btn-view:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(108, 99, 255, 0.4);
+            color: white;
+        }
+        
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+        
+        .footer-disclaimer {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 20px;
+        }
+        
+        /* Animation Classes */
+        .animate-pop {
+            animation: popIn 0.5s ease-out;
+        }
+        
+        .animate-fade {
+            animation: fadeIn 1s ease;
+        }
+        
+        .animate-slide {
+            animation: slideIn 0.8s ease;
+        }
+        
+        /* Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from { 
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes popIn {
+            0% { 
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% { 
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Content Section */
         .content-section {
             padding: 40px 0;
         }
-
-        .btn-view {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 4px;
-            transition: all 0.3s;
-        }
-
-        .btn-view:hover {
-            background-color: #218838;
-            transform: translateY(-2px);
-        }
-        a{
-            color: #ffff;
-            text-decoration: none;
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .syllabus-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .table th, .table td {
+                padding: 12px 15px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Header Section with Neo White Color -->
-    <header class="neo-white-header">
+    <!-- Header with Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
-            <div class="header-content">
-                <img src="assets/LOGO1.png" alt="Web Development Icon" class="header-img">
-                <h1>WEB DEVELOPMENT</h1>
-            </div>
-        </div>
-    </header>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <div class="logo">
+                    <i class="fas fa-code"></i>
+                </div>
+                Web Dev Hub Experiments
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="home.html">Home</a>
+                        <a class="nav-link" href="home.html"><i class="fas fa-home me-1"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="experiments.html">Experiments</a>
+                        <a class="nav-link" href="experiments.html"><i class="fas fa-flask me-1"></i> Experiments</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="syllabus.html">Syllabus</a>
+                        <a class="nav-link active" href="syllabus.html"><i class="fas fa-book me-1"></i> Syllabus</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about.html"><i class="fas fa-info-circle me-1"></i> About</a>
                     </li>
                 </ul>
             </div>
@@ -193,34 +305,41 @@
     <section class="content-section">
         <div class="container">
             <!-- Syllabus Header -->
-            <div class="syllabus-header text-center">
+            <div class="syllabus-header text-center animate-pop">
                 <h1>Web Technology & Computer Network Lab Experiments</h1>
                 <p class="lead mb-0">List of Practical Exercises</p>
             </div>
 
             <!-- Syllabus Table -->
-            <div class="syllabus-table">
+            <div class="syllabus-table animate-fade">
                 <table class="table table-hover">
                     <thead>
                         <tr>
                             <th scope="col" style="width: 10%">S.no</th>
                             <th scope="col">List Of Exercise Description</th>
-                            <th scope="col" style="width: 10%;">View</th>
+                            <th scope="col" style="width: 15%;">View</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr class="animate-slide">
                             <th scope="row">1</th>
                             <td>To Create a Simple Webpage Using HTML That Includes All tags</td>
                             <td>
                                 <button class="btn-view" onclick="window.open('exp1/exp1.html', '_blank')">View</button>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="animate-slide">
                             <th scope="row">2</th>
                             <td>To Create a E-Bay Book Site Webpage Using HTML That Includes All Tags</td>
                             <td>
                                 <button class="btn-view" onclick="window.open('exp2/login.html', '_blank')">View</button>
+                            </td>
+                        </tr>
+                        <tr class="animate-slide">
+                            <th scope="row">3</th>
+                            <td>To Design a Register Webpage With Form Validation</td>
+                            <td>
+                                <button class="btn-view" onclick="window.open('exp 3/exp3.html', '_blank')">View</button>
                             </td>
                         </tr>
                     </tbody>
@@ -229,13 +348,50 @@
         </div>
     </section>
 
-    <footer class="footer text-center">
+    <!-- Footer -->
+    <footer class="text-center">
         <div class="container">
-            <p class="mb-0">© 2023 Web Development Syllabus. All rights reserved.</p>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <h5>Web Development Syllabus</h5>
+                    <p>Comprehensive curriculum for mastering modern web technologies</p>
+                </div>
+            </div>
+            
+            <hr class="my-4 bg-light">
+            
+            <p class="footer-disclaimer">
+                The information provided on this website is for educational purposes only. 
+                While we strive to provide accurate and up-to-date information, we make no representations 
+                or warranties of any kind.
+            </p>
+            
+            <p class="mb-0">
+                &copy; 2023 Web Development Syllabus. All rights reserved.
+            </p>
         </div>
     </footer>
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-pop, .animate-fade, .animate-slide');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.visibility = 'visible';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(el => {
+                el.style.visibility = 'hidden';
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
