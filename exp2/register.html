@@ -55,7 +55,7 @@
             border-radius: 15px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            width: 350px;
+            width: 380px; /* Increased width to accommodate larger phone input */
             backdrop-filter: blur(8px);
             transform: scale(1);
             transition: all 0.4s ease;
@@ -117,14 +117,14 @@
             font-size: 0.9rem;
         }
 
-        /* Phone number input styling */
+        /* Phone number input styling - MODIFIED */
         .phone-input-container {
             display: flex;
-            gap: 7px;
+            gap: 10px;
         }
 
         .country-code {
-            flex: 0 0 69px;
+            flex: 0 0 90px; /* Increased width for country code dropdown */
         }
 
         .phone-number {
@@ -416,12 +416,15 @@
             <div class="phone-input-container">
                 <select class="country-code" id="countryCode" name="countryCode">
                     <option value="91">+91 (India)</option>
-                    <option value="1">+1 (USA)</option>
+                    <option value="1">+1 (USA/Canada)</option>
                     <option value="44">+44 (UK)</option>
                     <option value="61">+61 (Australia)</option>
+                    <option value="81">+81 (Japan)</option>
                     <option value="86">+86 (China)</option>
+                    <option value="33">+33 (France)</option>
+                    <option value="49">+49 (Germany)</option>
                 </select>
-                <input type="tel" class="phone-number" name="phone" id="phone" required placeholder="9787008877" 
+                <input type="tel" class="phone-number" name="phone" id="phone" required placeholder="e.g. 9876543210" 
                        pattern="[6-9][0-9]{9}" title="Phone number should start with 6-9 and be 10 digits">
             </div>
             <div class="error" id="phoneError"></div>
@@ -517,7 +520,7 @@
         </div>
         
         <div class="button-group">
-            <button type="submit">Register</button>
+            <button type="submit" id="registerButton">Register</button>
             <button type="reset">Reset</button>
         </div>
         
@@ -832,7 +835,7 @@
                 allValid = false;
             }
             
-            // If all valid, show success
+            // If all valid, show success and redirect
             if (allValid) {
                 // Visual feedback
                 this.style.transform = 'scale(0.98)';
@@ -846,8 +849,9 @@
                     alert('Registration successful!\n\nName: ' + document.getElementById('name').value + 
                           '\nEmail: ' + document.getElementById('email').value +
                           '\nPhone: +' + countryCode + ' ' + phoneNumber);
-                    // Here you would typically submit the form to a server
-                    // this.submit();
+                    
+                    // Redirect to login page after successful registration
+                    window.location.href = 'login.html';
                 }, 500);
             } else {
                 // Shake form to indicate errors
