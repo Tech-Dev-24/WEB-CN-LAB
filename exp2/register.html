@@ -33,7 +33,7 @@
             text-align: center;
             color: #ffffff;
             font-size: 2.5rem;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
             animation: slideDown 0.8s ease-out;
         }
@@ -51,7 +51,7 @@
 
         form {
             background-color: rgba(255, 255, 255, 0.15);
-            padding: 30px;
+            padding: 25px;
             border-radius: 15px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -78,19 +78,23 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
         }
 
+        .form-group {
+            margin-bottom: 15px;
+        }
+
         label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
             font-weight: 500;
             color: #ffffff;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
         }
 
         input, select, textarea {
             width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
+            padding: 10px;
+            margin-bottom: 3px;
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 8px;
             background-color: rgba(0, 0, 0, 0.3);
@@ -98,6 +102,7 @@
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
             transition: all 0.3s ease;
+            font-size: 0.95rem;
         }
 
         input:focus, select:focus, textarea:focus {
@@ -109,23 +114,75 @@
 
         input::placeholder, textarea::placeholder {
             color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Phone number input styling */
+        .phone-input-container {
+            display: flex;
+            gap: 7px;
+        }
+
+        .country-code {
+            flex: 0 0 69px;
+        }
+
+        .phone-number {
+            flex: 1;
+        }
+
+        /* Validation states */
+        input.valid, textarea.valid, select.valid {
+            border-color: #2ecc71;
+            background: rgba(46, 204, 113, 0.1);
+        }
+
+        input.invalid, textarea.invalid, select.invalid {
+            border-color: #e74c3c;
+            background: rgba(231, 76, 60, 0.1);
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-5px); }
+            40%, 80% { transform: translateX(5px); }
+        }
+
+        /* Error message styling */
+        .error {
+            color: #ffdddd;
+            font-size: 11px;
+            height: 14px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Character counter */
+        .char-counter {
+            font-size: 11px;
+            text-align: right;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: -8px;
+            margin-bottom: 10px;
         }
 
         /* Radio button styling */
         .radio-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .radio-options {
             display: flex;
-            gap: 15px;
-            margin-top: 8px;
+            gap: 12px;
+            margin-top: 6px;
         }
         
         .radio-options div {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             transition: transform 0.3s ease;
         }
         
@@ -134,8 +191,8 @@
         }
         
         input[type="radio"] {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             margin: 0;
             accent-color: #4a90e2;
             transition: all 0.3s ease;
@@ -149,9 +206,9 @@
         .checklist {
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 8px;
-            padding: 15px;
+            padding: 12px;
             background-color: rgba(0, 0, 0, 0.3);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             transition: all 0.3s ease;
         }
         
@@ -163,7 +220,7 @@
         .checklist-item {
             display: flex;
             align-items: center;
-            padding: 8px 0;
+            padding: 6px 0;
             transition: transform 0.3s ease;
         }
         
@@ -172,9 +229,9 @@
         }
         
         .checklist-item input {
-            width: 18px;
-            height: 18px;
-            margin: 0 10px 0 0;
+            width: 16px;
+            height: 16px;
+            margin: 0 8px 0 0;
             accent-color: #4a90e2;
             transition: all 0.3s ease;
         }
@@ -186,35 +243,38 @@
         .checklist-item label {
             margin: 0;
             font-weight: 400;
+            font-size: 0.9rem;
         }
 
         /* Date select boxes */
         .date-select {
             display: flex;
-            gap: 8px;
-            margin-bottom: 20px;
+            gap: 6px;
+            margin-bottom: 15px;
         }
 
         .date-select select {
             flex: 1;
-            padding: 10px;
+            padding: 8px;
+            font-size: 0.9rem;
         }
 
         /* Textarea styling */
         textarea {
-            height: 100px;
+            height: 90px;
             resize: vertical;
+            font-size: 0.9rem;
         }
 
         .button-group {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
+            gap: 12px;
+            margin-top: 20px;
         }
 
         button {
-            padding: 12px 25px;
+            padding: 10px 20px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
@@ -222,6 +282,7 @@
             font-family: 'Poppins', sans-serif;
             transition: all 0.3s ease;
             transform: translateY(0);
+            font-size: 0.95rem;
         }
 
         button[type="submit"] {
@@ -249,17 +310,18 @@
         /* Login link */
         .login-link {
             text-align: center;
-            margin-top: 25px;
+            margin-top: 20px;
         }
 
         a {
             color: #4a90e2;
             text-decoration: none;
             font-weight: 600;
-            padding: 8px 15px;
+            padding: 6px 12px;
             border-radius: 8px;
             transition: all 0.3s ease;
             position: relative;
+            font-size: 0.9rem;
         }
 
         a:hover {
@@ -289,7 +351,7 @@
         @media (max-width: 480px) {
             form {
                 width: 90%;
-                padding: 25px;
+                padding: 20px;
             }
             
             h1 {
@@ -298,7 +360,19 @@
             
             .radio-options {
                 flex-direction: column;
-                gap: 10px;
+                gap: 8px;
+            }
+            
+            .date-select {
+                flex-direction: column;
+            }
+            
+            .phone-input-container {
+                flex-direction: column;
+            }
+            
+            .country-code {
+                flex: 1;
             }
         }
     </style>
@@ -306,95 +380,141 @@
 
 <body>
     <h1>Register Form</h1>
-    <form action="login.html">
-        <label for="name">Full Name</label>
-        <input type="text" name="name" id="name" required placeholder="Enter your full name">
+    <form id="registrationForm">
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" name="name" id="name" required placeholder="Enter your full name (letters only)" 
+                   pattern="[A-Za-z\s]{6,}" title="Only alphabets and spaces (min 6 characters)">
+            <div class="char-counter" id="nameCounter">0/6</div>
+            <div class="error" id="nameError"></div>
+        </div>
         
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" required placeholder="your.email@example.com">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required placeholder="your.email@example.com" 
+                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            <div class="error" id="emailError"></div>
+        </div>
         
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required placeholder="At least 6 characters">
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required placeholder="At least 8 characters" 
+                   minlength="8">
+            <div class="char-counter" id="passwordCounter">0/8</div>
+            <div class="error" id="passwordError"></div>
+        </div>
         
-        <label for="phone">Phone Number</label>
-        <input type="tel" name="phone" id="phone" required placeholder="10 digit number">
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" name="confirmPassword" id="confirmPassword" required placeholder="Confirm your password" 
+                   minlength="8">
+            <div class="error" id="confirmPasswordError"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <div class="phone-input-container">
+                <select class="country-code" id="countryCode" name="countryCode">
+                    <option value="91">+91 (India)</option>
+                    <option value="1">+1 (USA)</option>
+                    <option value="44">+44 (UK)</option>
+                    <option value="61">+61 (Australia)</option>
+                    <option value="86">+86 (China)</option>
+                </select>
+                <input type="tel" class="phone-number" name="phone" id="phone" required placeholder="9787008877" 
+                       pattern="[6-9][0-9]{9}" title="Phone number should start with 6-9 and be 10 digits">
+            </div>
+            <div class="error" id="phoneError"></div>
+        </div>
         
         <div class="radio-group">
             <label>Gender</label>
             <div class="radio-options">
                 <div>
-                    <input type="radio" name="sex" id="male" value="male" checked>
+                    <input type="radio" name="gender" id="male" value="male">
                     <label for="male">Male</label>
                 </div>
                 <div>
-                    <input type="radio" name="sex" id="female" value="female">
+                    <input type="radio" name="gender" id="female" value="female">
                     <label for="female">Female</label>
                 </div>
                 <div>
-                    <input type="radio" name="sex" id="other" value="other">
+                    <input type="radio" name="gender" id="other" value="other">
                     <label for="other">Other</label>
                 </div>
             </div>
+            <div class="error" id="genderError"></div>
         </div>
         
-        <label>Date of Birth</label>
-        <div class="date-select">
-            <select name="day" required>
-                <option value="">Day</option>
-                <script>
-                    for(let i=1; i<=31; i++) {
-                        document.write(`<option value="${i}">${i}</option>`);
-                    }
-                </script>
-            </select>
-            <select name="month" required>
-                <option value="">Month</option>
-                <option value="1">January</option>
-                <option value="2">February</option>
-                <option value="3">March</option>
-                <option value="4">April</option>
-                <option value="5">May</option>
-                <option value="6">June</option>
-                <option value="7">July</option>
-                <option value="8">August</option>
-                <option value="9">September</option>
-                <option value="10">October</option>
-                <option value="11">November</option>
-                <option value="12">December</option>
-            </select>
-            <select name="year" required>
-                <option value="">Year</option>
-                <script>
-                    const currentYear = new Date().getFullYear();
-                    for(let i=currentYear; i>=1900; i--) {
-                        document.write(`<option value="${i}">${i}</option>`);
-                    }
-                </script>
-            </select>
+        <div class="form-group">
+            <label>Date of Birth</label>
+            <div class="date-select">
+                <select name="day" id="day" required>
+                    <option value="">Day</option>
+                    <script>
+                        for(let i=1; i<=31; i++) {
+                            document.write(`<option value="${i}">${i}</option>`);
+                        }
+                    </script>
+                </select>
+                <select name="month" id="month" required>
+                    <option value="">Month</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                <select name="year" id="year" required>
+                    <option value="">Year</option>
+                    <script>
+                        const currentYear = new Date().getFullYear();
+                        for(let i=currentYear; i>=1900; i--) {
+                            document.write(`<option value="${i}">${i}</option>`);
+                        }
+                    </script>
+                </select>
+            </div>
+            <div class="error" id="dobError"></div>
         </div>
         
-        <label>Languages Known</label>
-        <div class="checklist">
-            <div class="checklist-item">
-                <input type="checkbox" name="languages" id="english" value="english">
-                <label for="english">English</label>
+        <div class="form-group">
+            <label>Languages Known</label>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" name="languages" id="english" value="english">
+                    <label for="english">English</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" name="languages" id="telugu" value="telugu">
+                    <label for="telugu">Telugu</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" name="languages" id="hindi" value="hindi">
+                    <label for="hindi">Hindi</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" name="languages" id="tamil" value="tamil">
+                    <label for="tamil">Tamil</label>
+                </div>
             </div>
-            <div class="checklist-item">
-                <input type="checkbox" name="languages" id="telugu" value="telugu">
-                <label for="telugu">Telugu</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" name="languages" id="hindi" value="hindi">
-                <label for="hindi">Hindi</label>
-            </div>
-            <div class="checklist-item">
-                <input type="checkbox" name="languages" id="tamil" value="tamil">
-                <label for="tamil">Tamil</label>
-            </div>
+            <div class="error" id="languagesError"></div>
         </div>
         
-        <label for="address">Address</label>
-        <textarea name="address" id="address" required placeholder="Your full address"></textarea>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <textarea name="address" id="address" required placeholder="Your full address (min 10 characters)" 
+                      minlength="10"></textarea>
+            <div class="char-counter" id="addressCounter">0/10</div>
+            <div class="error" id="addressError"></div>
+        </div>
         
         <div class="button-group">
             <button type="submit">Register</button>
@@ -406,123 +526,358 @@
         </div>
     </form>
     <script>
-document.querySelector('form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const isNameValid = validateName();
-    const isEmailValid = validateEmail();
-    const isPasswordValid = validatePassword();
-    const isPhoneValid = validatePhone();
-    
-    if (isNameValid && isEmailValid && isPasswordValid && isPhoneValid) {
-        // Add animation before submission
-        const form = this;
-        form.style.animation = 'formFadeIn 0.5s 3 alternate';
-        
-        setTimeout(() => {
-            form.submit();
-        }, 1500);
-    }
-});
+        // Real-time validation for all fields
+        document.querySelectorAll('input, textarea, select').forEach(input => {
+            input.addEventListener('input', function() {
+                validateField(this);
+                updateCharCounter(this);
+                
+                // Check password match when either password field changes
+                if (this.id === 'password' || this.id === 'confirmPassword') {
+                    validatePasswordMatch();
+                }
+                
+                // Special validation for phone number
+                if (this.id === 'phone') {
+                    validatePhoneNumber(this);
+                }
+            });
+            
+            input.addEventListener('blur', function() {
+                validateField(this);
+                
+                // Check password match when either password field loses focus
+                if (this.id === 'password' || this.id === 'confirmPassword') {
+                    validatePasswordMatch();
+                }
+                
+                // Special validation for phone number
+                if (this.id === 'phone') {
+                    validatePhoneNumber(this);
+                }
+            });
+        });
 
-function validateName() {
-    const nameInput = document.getElementById('name');
-    const nameValue = nameInput.value.trim();
-    const nameRegex = /^[a-zA-Z \-']{6,}$/;
-    
-    if (!nameValue) {
-        showErrorAnimation(nameInput, "Name cannot be empty");
-        return false;
-    }
-    if (!nameRegex.test(nameValue)) {
-        showErrorAnimation(nameInput, "Name must be at least 6 characters and only contain letters, hyphens, or apostrophes");
-        return false;
-    }
-    return true;
-}
+        // Real-time validation for radio buttons
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                validateField(this);
+            });
+        });
 
-function validateEmail() {
-    const emailInput = document.getElementById('email');
-    const emailValue = emailInput.value.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
-    if (!emailValue) {
-        showErrorAnimation(emailInput, "Email cannot be empty");
-        return false;
-    }
-    if (!emailRegex.test(emailValue)) {
-        showErrorAnimation(emailInput, "Please enter a valid email (e.g., user@example.com)");
-        return false;
-    }
-    return true;
-}
+        // Real-time validation for checkboxes
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                validateField(this);
+            });
+        });
 
-function validatePassword() {
-    const passwordInput = document.getElementById('password');
-    const passwordValue = passwordInput.value;
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
-    
-    if (!passwordValue) {
-        showErrorAnimation(passwordInput, "Password cannot be empty");
-        return false;
-    }
-    if (!passwordRegex.test(passwordValue)) {
-        showErrorAnimation(passwordInput, "Password must be at least 6 characters and include uppercase, lowercase, number, and special character");
-        return false;
-    }
-    return true;
-}
+        // Validate phone number format
+        function validatePhoneNumber(field) {
+            const errorElement = document.getElementById('phoneError');
+            const value = field.value.trim();
+            
+            if (!value) return;
+            
+            // Check if phone number starts with 6-9 and is 10 digits
+            const phonePattern = /^[6-9][0-9]{9}$/;
+            if (!phonePattern.test(value)) {
+                field.classList.add('invalid');
+                if (errorElement) errorElement.textContent = 'Phone number must start with 6-9 and be 10 digits';
+            } else {
+                field.classList.remove('invalid');
+                field.classList.add('valid');
+                if (errorElement) errorElement.textContent = '';
+            }
+        }
 
-function validatePhone() {
-    const phoneInput = document.getElementById('phone');
-    const phoneValue = phoneInput.value.trim();
-    const phoneRegex = /^\d{10}$/;
-    
-    if (!phoneValue) {
-        showErrorAnimation(phoneInput, "Phone number cannot be empty");
-        return false;
-    }
-    if (!phoneRegex.test(phoneValue)) {
-        showErrorAnimation(phoneInput, "Phone number must be 10 digits (e.g., 9876543210)");
-        return false;
-    }
-    return true;
-}
+        // Validate individual field with specific error messages
+        function validateField(field) {
+            let isValid = true;
+            let errorMessage = '';
+            const errorElement = document.getElementById(`${field.id}Error`);
+            
+            // Reset visual state
+            field.classList.remove('valid', 'invalid');
+            if (errorElement) errorElement.textContent = '';
+            
+            // Skip validation if field is empty (except for radio buttons and checkboxes)
+            if ((field.type !== 'radio' && field.type !== 'checkbox' && !field.value.trim()) || 
+                (field.type === 'radio' && !document.querySelector('input[name="gender"]:checked'))) {
+                return;
+            }
+            
+            // Field-specific validation with detailed error messages
+            switch(field.id || field.name) {
+                case 'name':
+                    if (field.value.length < 6) {
+                        isValid = false;
+                        errorMessage = 'Name must be at least 6 characters long';
+                    } else if (!/^[A-Z][A-Za-z\s]+$/.test(field.value)) {
+                        isValid = false;
+                        errorMessage = 'Name should start with capital letter and contain only letters';
+                    } else if (field.value.split(' ').length < 2) {
+                        isValid = false;
+                        errorMessage = 'Please enter both first and last name';
+                    }
+                    break;
+                    
+                case 'email':
+                    const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+                    if (!emailPattern.test(field.value)) {
+                        isValid = false;
+                        errorMessage = 'Please enter a valid email (e.g., example@domain.com)';
+                    }
+                    break;
+                    
+                case 'password':
+                    if (field.value.length < 8) {
+                        isValid = false;
+                        errorMessage = 'Password must be at least 8 characters';
+                    } else if (!/[A-Z]/.test(field.value)) {
+                        isValid = false;
+                        errorMessage = 'Password needs at least 1 uppercase letter';
+                    } else if (!/[0-9]/.test(field.value)) {
+                        isValid = false;
+                        errorMessage = 'Password needs at least 1 number';
+                    } else if (!/[^A-Za-z0-9]/.test(field.value)) {
+                        isValid = false;
+                        errorMessage = 'Password needs at least 1 special character';
+                    }
+                    break;
+                    
+                case 'confirmPassword':
+                    // This is handled separately in validatePasswordMatch()
+                    break;
+                    
+                case 'phone':
+                    // Handled separately in validatePhoneNumber()
+                    return;
+                    
+                case 'gender':
+                    if (!document.querySelector('input[name="gender"]:checked')) {
+                        isValid = false;
+                        errorMessage = 'Please select your gender';
+                    }
+                    break;
+                    
+                case 'day':
+                case 'month':
+                case 'year':
+                    if (!document.getElementById('day').value || !document.getElementById('month').value || !document.getElementById('year').value) {
+                        isValid = false;
+                        errorMessage = 'Please select a complete date of birth';
+                    } else {
+                        // Validate if the date is valid
+                        const day = parseInt(document.getElementById('day').value);
+                        const month = parseInt(document.getElementById('month').value);
+                        const year = parseInt(document.getElementById('year').value);
+                        
+                        if (day && month && year) {
+                            const date = new Date(year, month - 1, day);
+                            const today = new Date();
+                            const minAgeDate = new Date();
+                            minAgeDate.setFullYear(today.getFullYear() - 13); // Minimum 13 years old
+                            
+                            if (date >= today) {
+                                isValid = false;
+                                errorMessage = 'Date of birth must be in the past';
+                            } else if (date > minAgeDate) {
+                                isValid = false;
+                                errorMessage = 'You must be at least 13 years old';
+                            }
+                        }
+                    }
+                    break;
+                    
+                case 'address':
+                    if (field.value.length < 10) {
+                        isValid = false;
+                        errorMessage = 'Address must be at least 10 characters long';
+                    } else if (!/.+\d+.+/.test(field.value)) {
+                        isValid = false;
+                        errorMessage = 'Address should include street number';
+                    }
+                    break;
+                    
+                case 'languages':
+                    if (!document.querySelectorAll('input[name="languages"]:checked').length) {
+                        isValid = false;
+                        errorMessage = 'Please select at least one language';
+                    }
+                    break;
+            }
+            
+            // Update visual feedback
+            if (field.type !== 'radio' && field.type !== 'checkbox') {
+                if (isValid) {
+                    field.classList.add('valid');
+                    if (errorElement) errorElement.textContent = '';
+                } else {
+                    field.classList.add('invalid');
+                    if (errorElement) errorElement.textContent = errorMessage;
+                }
+            } else {
+                // For radio buttons and checkboxes, update the error message
+                const errorId = field.name === 'gender' ? 'genderError' : 'languagesError';
+                document.getElementById(errorId).textContent = errorMessage;
+            }
+        }
 
-function showErrorAnimation(element, message) {
-    // Store original styles
-    const originalBorder = element.style.border;
-    const originalBgColor = element.style.backgroundColor;
-    
-    // Apply error animation
-    element.style.border = '2px solid #ff3860';
-    element.style.backgroundColor = 'rgba(255, 56, 96, 0.1)';
-    element.style.animation = 'shake 0.5s';
-    
-    // Show error message
-    alert(message);
-    
-    // Focus on the element
-    element.focus();
-    
-    // Reset styles after animation
-    setTimeout(() => {
-        element.style.border = originalBorder;
-        element.style.backgroundColor = originalBgColor;
-        element.style.animation = '';
-    }, 1000);
-}
+        // Validate password match
+        function validatePasswordMatch() {
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirmPassword');
+            const errorElement = document.getElementById('confirmPasswordError');
+            
+            // Reset visual state
+            confirmPassword.classList.remove('valid', 'invalid');
+            if (errorElement) errorElement.textContent = '';
+            
+            // Skip validation if either field is empty
+            if (!password.value.trim() || !confirmPassword.value.trim()) {
+                return;
+            }
+            
+            // Check if passwords match
+            if (password.value !== confirmPassword.value) {
+                confirmPassword.classList.add('invalid');
+                if (errorElement) errorElement.textContent = 'Passwords do not match';
+            } else {
+                confirmPassword.classList.add('valid');
+                if (errorElement) errorElement.textContent = '';
+            }
+        }
 
-// Add shake animation for errors
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes shake {
-        0%, 100% { transform: translateX(0); }
-        10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-        20%, 40%, 60%, 80% { transform: translateX(5px); }
-    }
-`;
-document.head.appendChild(style);
-</script>
+        // Enhanced character counter with color coding
+        function updateCharCounter(field) {
+            const counterId = `${field.id}Counter`;
+            const counterElement = document.getElementById(counterId);
+            
+            if (counterElement) {
+                let minLength, maxLength;
+                
+                switch(field.id) {
+                    case 'name':
+                        minLength = 6;
+                        maxLength = 30;
+                        break;
+                    case 'address':
+                        minLength = 10;
+                        maxLength = 100;
+                        break;
+                    case 'password':
+                        minLength = 8;
+                        maxLength = 20;
+                        break;
+                    default:
+                        minLength = field.minLength || 0;
+                        maxLength = field.maxLength || Infinity;
+                }
+                
+                const currentLength = field.value.length;
+                counterElement.textContent = `${currentLength}/${maxLength}`;
+                
+                // Color coding
+                if (currentLength < minLength) {
+                    counterElement.style.color = '#e74c3c'; // Red
+                } else if (currentLength > maxLength) {
+                    counterElement.style.color = '#e67e22'; // Orange
+                } else {
+                    counterElement.style.color = '#2ecc71'; // Green
+                }
+            }
+        }
+
+        // Form submission handler with comprehensive validation
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate all fields
+            let allValid = true;
+            document.querySelectorAll('input, textarea, select').forEach(field => {
+                validateField(field);
+                if (field.classList.contains('invalid')) {
+                    allValid = false;
+                    // Scroll to first invalid field
+                    if (allValid === false) {
+                        field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        field.focus();
+                        allValid = null; // Only scroll to first error
+                    }
+                }
+            });
+            
+            // Validate password match
+            validatePasswordMatch();
+            if (document.getElementById('confirmPassword').classList.contains('invalid')) {
+                allValid = false;
+            }
+            
+            // Validate phone number
+            validatePhoneNumber(document.getElementById('phone'));
+            if (document.getElementById('phone').classList.contains('invalid')) {
+                allValid = false;
+            }
+            
+            // Special validation for radio buttons
+            if (!document.querySelector('input[name="gender"]:checked')) {
+                document.getElementById('genderError').textContent = 'Please select your gender';
+                allValid = false;
+            }
+            
+            // Special validation for checkboxes
+            if (!document.querySelectorAll('input[name="languages"]:checked').length) {
+                document.getElementById('languagesError').textContent = 'Please select at least one language';
+                allValid = false;
+            }
+            
+            // If all valid, show success
+            if (allValid) {
+                // Visual feedback
+                this.style.transform = 'scale(0.98)';
+                this.style.boxShadow = '0 0 20px rgba(46, 204, 113, 0.5)';
+                
+                setTimeout(() => {
+                    this.style.transform = '';
+                    this.style.boxShadow = '';
+                    const countryCode = document.getElementById('countryCode').value;
+                    const phoneNumber = document.getElementById('phone').value;
+                    alert('Registration successful!\n\nName: ' + document.getElementById('name').value + 
+                          '\nEmail: ' + document.getElementById('email').value +
+                          '\nPhone: +' + countryCode + ' ' + phoneNumber);
+                    // Here you would typically submit the form to a server
+                    // this.submit();
+                }, 500);
+            } else {
+                // Shake form to indicate errors
+                this.style.animation = 'none';
+                void this.offsetWidth;
+                this.style.animation = 'shake 0.5s';
+            }
+        });
+
+        // Reset form handler
+        document.querySelector('button[type="reset"]').addEventListener('click', function() {
+            // Clear all error messages
+            document.querySelectorAll('.error').forEach(el => {
+                el.textContent = '';
+            });
+            
+            // Remove validation classes
+            document.querySelectorAll('.valid, .invalid').forEach(el => {
+                el.classList.remove('valid', 'invalid');
+            });
+            
+            // Reset character counters
+            document.querySelectorAll('.char-counter').forEach(el => {
+                el.textContent = '0/0';
+                el.style.color = 'rgba(255, 255, 255, 0.7)';
+            });
+            
+            // Reset country code to default
+            document.getElementById('countryCode').value = '91';
+        });
+    </script>
 </body>
 </html>

@@ -270,7 +270,8 @@
         .form-group:nth-child(5) { animation-delay: 0.5s; }
         .form-group:nth-child(6) { animation-delay: 0.6s; }
         .form-group:nth-child(7) { animation-delay: 0.7s; }
-        button { animation-delay: 0.8s; }
+        .form-group:nth-child(8) { animation-delay: 0.8s; }
+        button { animation-delay: 0.9s; }
 
         /* Responsive design */
         @media (max-width: 600px) {
@@ -349,10 +350,17 @@
             
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Enter password (min 6 characters)" 
-                       minlength="6">
-                <div class="char-counter" id="passwordCounter">0/6</div>
+                <input type="password" id="password" name="password" placeholder="Enter password (min 8 characters)" 
+                       minlength="8">
+                <div class="char-counter" id="passwordCounter">0/8</div>
                 <div class="error" id="passwordError"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" 
+                       minlength="8">
+                <div class="error" id="confirmPasswordError"></div>
             </div>
             
             <button type="submit">Register Now</button>
@@ -373,10 +381,20 @@
         input.addEventListener('input', function() {
             validateField(this);
             updateCharCounter(this);
+            
+            // Check password match when either password field changes
+            if (this.id === 'password' || this.id === 'confirmPassword') {
+                validatePasswordMatch();
+            }
         });
         
         input.addEventListener('blur', function() {
             validateField(this);
+            
+            // Check password match when either password field loses focus
+            if (this.id === 'password' || this.id === 'confirmPassword') {
+                validatePasswordMatch();
+            }
         });
     });
 
@@ -480,6 +498,10 @@
                 }
                 break;
                 
+            case 'confirmPassword':
+                // This is handled separately in validatePasswordMatch()
+                break;
+                
             case 'gender':
                 if (!document.querySelector('input[name="gender"]:checked')) {
                     isValid = false;
@@ -507,6 +529,34 @@
                 document.getElementById('genderError').style.animation = 'shake 0.5s';
                 setTimeout(() => document.getElementById('genderError').style.animation = '', 500);
             }
+        }
+    }
+
+    // Validate password match
+    function validatePasswordMatch() {
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirmPassword');
+        const errorElement = document.getElementById('confirmPasswordError');
+        
+        // Reset visual state
+        confirmPassword.classList.remove('valid', 'invalid');
+        if (errorElement) errorElement.textContent = '';
+        
+        // Skip validation if either field is empty
+        if (!password.value.trim() || !confirmPassword.value.trim()) {
+            return;
+        }
+        
+        // Check if passwords match
+        if (password.value !== confirmPassword.value) {
+            confirmPassword.classList.add('invalid');
+            if (errorElement) errorElement.textContent = 'Passwords do not match';
+            // Add shake animation for immediate attention
+            confirmPassword.style.animation = 'shake 0.5s';
+            setTimeout(() => confirmPassword.style.animation = '', 500);
+        } else {
+            confirmPassword.classList.add('valid');
+            if (errorElement) errorElement.textContent = '';
         }
     }
 
@@ -568,6 +618,12 @@
                 }
             }
         });
+        
+        // Validate password match
+        validatePasswordMatch();
+        if (document.getElementById('confirmPassword').classList.contains('invalid')) {
+            allValid = false;
+        }
         
         // Special validation for radio buttons
         if (!document.querySelector('input[name="gender"]:checked')) {
@@ -635,6 +691,11 @@
                 input.focus();
                 clearBtn.style.display = 'none';
                 validateField(input);
+                
+                // If it's a password field, also validate the match
+                if (input.id === 'password' || input.id === 'confirmPassword') {
+                    validatePasswordMatch();
+                }
             });
         }
     });
