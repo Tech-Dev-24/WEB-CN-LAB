@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Book Catalog Site</title>
+  <link rel="stylesheet" href="catalog/books.css">
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0; padding: 0;
+      background: #f9fafb; color: #111827;
+      text-align: center;
+    }
+    header {
+      background: #1a73e8; color: white;
+      padding: 1rem 0; font-size: 1.8rem;
+    }
+    main { padding: 2rem; }
+    a.button {
+      display: inline-block; margin-top: 2rem;
+      padding: 0.8rem 1.5rem; border-radius: 6px;
+      background: #1a73e8; color: white; text-decoration: none;
+      font-weight: bold; font-size: 1.2rem;
+      transition: background 0.3s ease;
+    }
+    a.button:hover { background: #155ab6; }
+  </style>
+</head>
+<body>
+  <header>📚 Welcome to the Book Catalog</header>
+  <main>
+    <p>This is a simple XML-powered documentation site to manage and view book details dynamically.</p>
+    <a href="catalog/books.xml" class="button">View Catalog</a>
+  </main>
+</body>
+</html>
