@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library SYSTEM "books.dtd">
+<?xml-stylesheet type="text/xsl" href="books.xsl"?>
+<library>
+    <book category="Computer Science">
+        <title>Introduction to Algorithms</title>
+        <author>Thomas H. Cormen</author>
+        <isbn>978-0262033848</isbn>
+        <publisher>MIT Press</publisher>
+        <edition>3rd</edition>
+        <price>85.00</price>
+    </book>
+    <book category="Fiction">
+        <title>To Kill a Mockingbird</title>
+        <author>Harper Lee</author>
+        <isbn>978-0061120084</isbn>
+        <publisher>HarperCollins</publisher>
+        <edition>50th Anniversary</edition>
+        <price>12.99</price>
+    </book>
+    <book category="Data Analytics">
+        <title>Data Science for Business</title>
+        <author>Foster Provost</author>
+        <isbn>978-1449361327</isbn>
+        <publisher>O'Reilly Media</publisher>
+        <edition>1st</edition>
+        <price>39.95</price>
+    </book>
+    <book category="Self Development">
+        <title>Atomic Habits</title>
+        <author>James Clear</author>
+        <isbn>978-0735211292</isbn>
+        <publisher>Avery</publisher>
+        <edition>1st</edition>
+        <price>16.99</price>
+    </book>
+</library>

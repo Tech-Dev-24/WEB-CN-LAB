@@ -1,0 +1,82 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #4a40cc;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+#book-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#book-table th {
+    background-color: #808080 !important; /* GREY as requested */
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#book-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#book-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+#book-table tr:hover {
+    background-color: #eef2ff;
+}
+
+.author {
+    color: #2c5530;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.title {
+    color: #1a365d;
+    font-weight: 600;
+}
+
+.isbn {
+    color: #6c63ff;
+    font-family: monospace;
+}
+
+.publisher {
+    color: #6b46c1;
+}
+
+.edition {
+    color: #b7791f;
+}
+
+.price {
+    color: #38a169;
+    font-weight: bold;
+}
